@@ -1,0 +1,7 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+bacalah.API/appsettings.Development.json
+bacalah.API/appsettings.json

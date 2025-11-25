@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/bacalah.Entities/Data/ApplicationDbContext.cs">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/bacalah.Entities/Data/ApplicationDbContext.cs" />
+              <option name="originalContent" value="using bacalah.Entities.Entities;&#10;using Microsoft.AspNetCore.Identity.EntityFrameworkCore;&#10;using Microsoft.EntityFrameworkCore;&#10;&#10;namespace bacalah.Entities.Data;&#10;&#10;public class ApplicationDbContext : IdentityDbContext&lt;User&gt;&#10;{&#10;    public ApplicationDbContext(DbContextOptions options) : base(options)&#10;    {&#10;    }&#10;    &#10;    protected override void OnModelCreating(ModelBuilder builder)&#10;    {&#10;        base.OnModelCreating(builder);&#10;            &#10;        // Additional configuration can be added here&#10;    }&#10;}" />
+              <option name="updatedContent" value="using bacalah.Entities.Entities;&#10;using Microsoft.AspNetCore.Identity.EntityFrameworkCore;&#10;using Microsoft.EntityFrameworkCore;&#10;&#10;namespace bacalah.Entities.Data;&#10;&#10;public class ApplicationDbContext : IdentityDbContext&lt;User&gt;&#10;{&#10;    public ApplicationDbContext(DbContextOptions&lt;ApplicationDbContext&gt; options) : base(options)&#10;    {&#10;    }&#10;    &#10;    protected override void OnModelCreating(ModelBuilder builder)&#10;    {&#10;        base.OnModelCreating(builder);&#10;            &#10;        // Additional configuration can be added here&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
