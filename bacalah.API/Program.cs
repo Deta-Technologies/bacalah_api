@@ -114,6 +114,7 @@ builder.Services.AddAuthorization();
 // Custom Services
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ITokenService, TokenService>(); 
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 // Controllers
 builder.Services.AddControllers();
