@@ -154,6 +154,193 @@ namespace bacalah.Entities.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("bacalah.Entities.Entities.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340),
+                            Name = "Technology",
+                            UpdatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340),
+                            Name = "Science",
+                            UpdatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340),
+                            Name = "Programming",
+                            ParentId = 1,
+                            UpdatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340),
+                            Name = "Database",
+                            ParentId = 1,
+                            UpdatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340)
+                        });
+                });
+
+            modelBuilder.Entity("bacalah.Entities.Entities.Document", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("LONGTEXT");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("Title");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("documents");
+                });
+
+            modelBuilder.Entity("bacalah.Entities.Entities.DocumentTag", b =>
+                {
+                    b.Property<int>("DocumentId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(0);
+
+                    b.Property<int>("TagId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("DocumentId", "TagId");
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("DocumentId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("DocumentTags");
+                });
+
+            modelBuilder.Entity("bacalah.Entities.Entities.Tag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Tags");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5410),
+                            Name = "tutorial"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5410),
+                            Name = "guide"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5420),
+                            Name = "advanced"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5420),
+                            Name = "beginner"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5420),
+                            Name = "reference"
+                        });
+                });
+
             modelBuilder.Entity("bacalah.Entities.Entities.User", b =>
                 {
                     b.Property<string>("Id")
@@ -267,6 +454,70 @@ namespace bacalah.Entities.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("bacalah.Entities.Entities.Category", b =>
+                {
+                    b.HasOne("bacalah.Entities.Entities.Category", "Parent")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Parent");
+                });
+
+            modelBuilder.Entity("bacalah.Entities.Entities.Document", b =>
+                {
+                    b.HasOne("bacalah.Entities.Entities.Category", "Category")
+                        .WithMany("Documents")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("bacalah.Entities.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("bacalah.Entities.Entities.DocumentTag", b =>
+                {
+                    b.HasOne("bacalah.Entities.Entities.Document", "Document")
+                        .WithMany("DocumentTags")
+                        .HasForeignKey("DocumentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("bacalah.Entities.Entities.Tag", "Tag")
+                        .WithMany("DocumentTags")
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Document");
+
+                    b.Navigation("Tag");
+                });
+
+            modelBuilder.Entity("bacalah.Entities.Entities.Category", b =>
+                {
+                    b.Navigation("Documents");
+
+                    b.Navigation("SubCategories");
+                });
+
+            modelBuilder.Entity("bacalah.Entities.Entities.Document", b =>
+                {
+                    b.Navigation("DocumentTags");
+                });
+
+            modelBuilder.Entity("bacalah.Entities.Entities.Tag", b =>
+                {
+                    b.Navigation("DocumentTags");
                 });
 #pragma warning restore 612, 618
         }
