@@ -22,6 +22,7 @@ public class DocumentService : IDocumentService
             .Include(d => d.Category)
             .Include(d => d.DocumentTags)
             .ThenInclude(dt => dt.Tag)
+            .Include(d => d.User)
             .OrderByDescending(d => d.UpdatedAt);
         
         var totalCount = await query.CountAsync();

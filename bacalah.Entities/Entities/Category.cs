@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace bacalah.Entities.Entities;
 
-[Table("categories")]
 public class Category
 {
     [Key]

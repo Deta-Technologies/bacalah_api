@@ -117,6 +117,7 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IDocumentService, DocumentService>();
 builder.Services.AddScoped<ITagService, TagService>();
+builder.Services.AddScoped<ISearchService, SearchService>();
 
 // Controllers
 builder.Services.AddControllers();

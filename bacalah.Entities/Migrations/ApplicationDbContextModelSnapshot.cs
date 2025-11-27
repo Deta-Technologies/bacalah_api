@@ -181,38 +181,38 @@ namespace bacalah.Entities.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.ToTable("categories");
+                    b.ToTable("Categories");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340),
+                            CreatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(8900),
                             Name = "Technology",
-                            UpdatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340)
+                            UpdatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(8900)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340),
+                            CreatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(8900),
                             Name = "Science",
-                            UpdatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340)
+                            UpdatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(8900)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340),
+                            CreatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(8900),
                             Name = "Programming",
                             ParentId = 1,
-                            UpdatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340)
+                            UpdatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(8900)
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340),
+                            CreatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(8900),
                             Name = "Database",
                             ParentId = 1,
-                            UpdatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5340)
+                            UpdatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(8900)
                         });
                 });
 
@@ -256,7 +256,7 @@ namespace bacalah.Entities.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("documents");
+                    b.ToTable("Documents");
                 });
 
             modelBuilder.Entity("bacalah.Entities.Entities.DocumentTag", b =>
@@ -312,31 +312,31 @@ namespace bacalah.Entities.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5410),
+                            CreatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(8990),
                             Name = "tutorial"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5410),
+                            CreatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(8990),
                             Name = "guide"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5420),
+                            CreatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(8990),
                             Name = "advanced"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5420),
+                            CreatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(9000),
                             Name = "beginner"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2025, 11, 26, 14, 29, 52, 367, DateTimeKind.Utc).AddTicks(5420),
+                            CreatedAt = new DateTime(2025, 11, 27, 17, 33, 30, 611, DateTimeKind.Utc).AddTicks(9000),
                             Name = "reference"
                         });
                 });
