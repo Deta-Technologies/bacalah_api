@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace bacalah.API.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("[controller]")]
 [Authorize]
 public class CategoriesController : ControllerBase
 {
